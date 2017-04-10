@@ -1,0 +1,57 @@
+    
+    <div class="container container-fluid"> <!-- Navigation bar with a app logo  -->
+        <div class="navbar navbar-inverse">
+     
+          <p id="logo">My App </p>
+                
+        </div>
+
+
+        <h2> ngFor and ngIf </h2>
+        <div class="table table-responsive">  <!--Create a rersponsive, striped, bordered bootstrap table  -->
+            <table class="table-striped" *ngIf='emp_arr && emp_arr.length'>      <!-- Check if emp_arr array exists and contains values  -->
+                <thead>
+                    <tr class="tabrow">             <!-- Create a row in the table with the headings of the columns as cell data   -->
+                        <th class="tabcell">Name</th>
+                        <th class="tabcell">Age</th>
+                        <th class="tabcell">Profession</th>
+                        <th class="tabcell">Age criteria</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor= 'let emp of emp_arr'>       <!--Iterate through the emp_arr array by declaring a block variable emp and running it through the array items   -->
+                    <template [ngIf]='emp.age>27'>      <!--Check if the emp.age value is greater than 27  -->
+                    <td class="tabcell">{{emp.name}}</td> <!--If yes, print the below details against the employee row  -->
+                    <td class="tabcell">{{emp.age}}</td>
+                    <td class="tabcell">{{emp.profession}}</td>
+                    <td class="tabcell">Age is greater than 27. Criteria matched</td>
+                    </template>
+                </tr>
+               <hr>
+                <tr *ngFor= 'let emp of emp_arr'>           <!--Iterate through the emp_arr array by declaring a block variable emp and running it through the array items   -->
+                    <template [ngIf]='emp.age<=27'>          <!--Check if the emp.age value is lesser than 27   -->
+                    <td class="tabcell">{{emp.name}}</td>   <!--If yes, print the below details against the employee row  -->
+                    <td class="tabcell">{{emp.age}}</td>
+                    <td class="tabcell">{{emp.profession}}</td>
+                    <td class="tabcell">Age is lesser than 27. Criteria not matched</td>
+                    </template>
+                </tr>
+               
+                <tbody>
+            </table>
+        </div>
+      
+   
+        <div>
+            <h2> Attribute Directives </h2>
+            <p>
+                <span>I'm some plain text.</span> <!-- Create 5 span elements in a paragraph  -->
+                <span>Im colourless.</span>
+                <span my-span>I'm all glowing and GOLD!!</span> <!--The third element has my-span tag which is a selector in the highlight.component -->
+                <span>I'm so black &amp; white.</span>
+                <span>Throw some colour on me.</span>
+            </p>
+        </div>
+      </div>  
+       
+        

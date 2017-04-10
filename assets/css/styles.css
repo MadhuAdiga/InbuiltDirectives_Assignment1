@@ -1,0 +1,12 @@
+#logo{
+	font-size: 2em;
+	font-weight:bold; 
+	color: grey;
+	padding-left:10px;
+}
+
+.tabcell {
+  padding: 10px;
+	border: 1px solid grey;
+	background-color: lightcyan
+}
